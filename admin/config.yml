@@ -1,0 +1,94 @@
+# Before using the dashboard:
+# 1. Create a Decap Turbo site connected to your GitHub repository.
+# 2. Replace the placeholder below with the Site ID from the Decap Turbo dashboard.
+backend:
+  name: turbo-github
+  turbo_site_id: REPLACE_WITH_DECAP_TURBO_SITE_ID
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: "https://YOUR-NETLIFY-SITE.netlify.app"
+display_url: "https://YOUR-NETLIFY-SITE.netlify.app"
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - name: "projects"
+        label: "Projects"
+        file: "data/projects.json"
+        format: "json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.category}}"
+            fields:
+              - label: "Project title"
+                name: "title"
+                widget: "string"
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - "Web Design"
+                  - "Graphic Design"
+                  - "Mockup Design"
+                  - "Application"
+                  - "Computer Training"
+                  - "Other"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+              - label: "Cover image / screenshot"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "Technologies or tools"
+                name: "technologies"
+                widget: "list"
+                required: false
+              - label: "Live demo URL"
+                name: "demo_url"
+                widget: "string"
+                required: false
+              - label: "Repository URL"
+                name: "repo_url"
+                widget: "string"
+                required: false
+              - label: "Publish this project"
+                name: "published"
+                widget: "boolean"
+                default: true
+      - name: "designs"
+        label: "Design Gallery (flyers, branding, logos)"
+        file: "data/designs.json"
+        format: "json"
+        fields:
+          - label: "Designs"
+            name: "designs"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.category}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Client / company", name: "client", widget: "string", required: false }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["Branding", "Logo Design", "Flyer", "Poster", "Social Media", "Print Material", "Mockup", "Other"]
+              - { label: "Year", name: "year", widget: "string", required: false }
+              - { label: "Cover image (shown on the card)", name: "cover", widget: "image", required: false }
+              - label: "Gallery images (add as many as you need)"
+                name: "gallery"
+                widget: "list"
+                required: false
+                summary: "{{fields.caption}}"
+                fields:
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Caption (what this image shows)", name: "caption", widget: "string", required: false }
+              - { label: "Project description", name: "description", widget: "text" }
+              - { label: "What I delivered", name: "deliverables", widget: "list", required: false }
+              - { label: "Tools used", name: "tools", widget: "list", required: false }
+              - { label: "Publish this design", name: "published", widget: "boolean", default: true }

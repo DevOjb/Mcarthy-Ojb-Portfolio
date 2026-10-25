@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "title": "Maxi-Shawarma Website",
+      "category": "Web Design",
+      "description": "A website designed and built for Maxi-Shawarma.",
+      "image": "",
+      "technologies": [],
+      "demo_url": "",
+      "repo_url": "",
+      "published": true
+    },
+    {
+      "title": "E-commerce Website",
+      "category": "Web Design",
+      "description": "An e-commerce website project built for online product browsing.",
+      "image": "",
+      "technologies": [],
+      "demo_url": "",
+      "repo_url": "",
+      "published": true
+    },
+    {
+      "title": "Calculator Application",
+      "category": "Application",
+      "description": "A calculator application built as a practical front-end project.",
+      "image": "",
+      "technologies": [],
+      "demo_url": "",
+      "repo_url": "",
+      "published": true
+    }
+  ]
+}
