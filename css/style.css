@@ -107,6 +107,47 @@ body.modal-open{overflow:hidden}
 @media(max-width:680px){.design-grid{grid-template-columns:1fr;gap:17px}}
 
 
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-float svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+/* Mobile adjustment */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 54px;
+    height: 54px;
+    bottom: 18px;
+    right: 18px;
+  }
+}
+
+
 /* Images: one consistent, forgiving system */
 img{max-width:100%;height:auto}
 .portrait-frame.has-photo .portrait-fallback{display:none}
